@@ -1,26 +1,37 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import strp from '../../assets/images/stripe.png';
 import vis from '../../assets/images/visa.png';
 import express from '../../assets/images/exe.png';
 import master from '../../assets/images/mas.png';
 import paypal from '../../assets/images/pal.png';
 import apple from '../../assets/images/apple.png';
+import password from '../../assets/images/pass.png';
 
 export default function Checkout() {
   return (
-    <div className="p-4 md:p-8 overflow-hidden md:overflow-auto">
-      {/* Navbar */}
-      <nav className="flex justify-between bg-gray-100 w-full p-4  ">
-        <div className="space-y-1">
-          <span className="block h-0.5 w-5 bg-black"></span>
-          <span className="block h-0.5 w-5 bg-black"></span>
-          <span className="block h-0.5 w-5 bg-black"></span>
+    <div className="flex flex-col items-center justify-center px-4">
+      
+      <nav className="flex items-center justify-between bg-gray-100 w-full p-4">
+        <div className="ml-8 flex items-center space-x-2">
+          <div className="space-y-1">
+            <span className="block h-0.5 w-5 bg-black"></span>
+            <span className="block h-0.5 w-5 bg-black"></span>
+            <span className="block h-0.5 w-5 bg-black"></span>
+          </div>
+          <h3 className='ml-2'>Timbu</h3>
         </div>
-        <h3>Timbu</h3>
-        <p>Processing Order</p>
+        <p className='flex items-center mr-8 font-bold'>Processing order...</p>
       </nav>
+      <div className="flex items-center mt-4 space-x-2">
+        <Link to="/" className="text-black">Tools</Link>
+        <span className="text-black">{'>'}</span>
+        <Link to="/cart" className="text-black">Cart</Link>
+        <span className="text-black">{'>'}</span>
+        <p className="text-gray-700">Checkout</p>
+      </div>
 
-      <div className="pt-16 flex flex-col md:flex-row md:space-x-8">
+      <div className="pt-16 flex flex-col md:flex-row md:space-x-8 w-full">
         {/* Left Side: Contact Information, Shipping Address, Payment Method */}
         <div className="w-full md:w-3/5">
           <div className="mb-8">
@@ -153,7 +164,10 @@ export default function Checkout() {
 
           <div className="mb-8">
             <h1 className="text-3xl font-bold mb-4">Payment Method</h1>
-            <p className="mb-4">All transactions are secured, processed and authorized by external payment providers</p>
+            <div className="flex items-center mb-4">
+              <img src={password} alt="Password" className="h-6 mr-2" />
+              <p className="mb-4">All transactions are secured, processed and authorized by external payment providers</p>
+            </div>
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-between border bg-gray-100 p-4 rounded">
                 <input
@@ -233,7 +247,6 @@ export default function Checkout() {
           </div>
         </div>
 
-        {/* Right Side: Order History */}
         <div className="w-full md:w-2/5 mt-8 md:mt-0">
           <div className="border bg-white shadow-md rounded p-4 md:pl-8">
             <h1 className="text-3xl font-bold mb-4">Order History</h1>

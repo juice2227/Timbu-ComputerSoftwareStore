@@ -1,21 +1,24 @@
+import React from 'react';
 import cong from '../../assets/images/cong.png';
 
 export default function Order() {
   return (
-    <div className="flex flex-col items-center justify-center ">
-      <nav className="flex items-center justify-between bg-gray-100 w-full p-4"> 
-        <div className="space-y-1">
-          <span className="block h-0.5 w-5 bg-black"></span>
-          <span className="block h-0.5 w-5 bg-black"></span>
-          <span className="block h-0.5 w-5 bg-black"></span>
+    <div className="flex flex-col items-center justify-center">
+      <nav className="flex items-center justify-between bg-gray-100 w-full p-4">
+        <div className="ml-8 flex items-center space-x-2">
+          <div className="space-y-1">
+            <span className="block h-0.5 w-5 bg-black"></span>
+            <span className="block h-0.5 w-5 bg-black"></span>
+            <span className="block h-0.5 w-5 bg-black"></span>
+          </div>
+          <h3 className='ml-2'>Timbu</h3>
         </div>
-        <h3>Timbu</h3>
-        <p>Order Received</p>
+        <p className='flex items-center mr-8 font-bold'>Order Received</p>
       </nav>
 
       <h3 className="text-center text-gray mt-12">Thank You for Your Purchase!! 🌟</h3>
       <h2 className="text-center text-2xl font-bold mb-2">Order Successfully Placed!!</h2>
-      <img src={cong} alt="" className="h-12 w-12 mb-4" />
+      <img src={cong} alt="Congratulations" className="h-12 w-12 mb-4" />
       <hr className="w-28 border-t-1 border-gray-500 mb-6" />
       <h3 className="mb-2">Order History</h3>
 
