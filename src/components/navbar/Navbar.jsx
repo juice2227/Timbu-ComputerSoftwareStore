@@ -63,24 +63,26 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className='flex justify-between'>
-        <p>Tools ><Link to='/products'><span>Shops</span></Link></p>
+      <div className='flex justify-between items-center p-4'>
+        <p>Tools > <Link to='/products'><span>Shops</span></Link></p>
         <button className='bg-yellow-400 py-2 px-4 ml-10 rounded-full '>Filter</button>
-        <label htmlFor="country" className="block text-gray-700 text-sm font-bold mb-2">Sort by:</label>
-        <div className="border rounded py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-          <select
-            id="country"
-            name="country"
-            className="text-gray-700"
-            disabled
-          >
-            <option>Latest</option>
-            <option>Country 1</option>
-            <option>Country 2</option>
-            <option>Country 3</option>
-          </select>
+        <div className="flex items-center">
+          <label htmlFor="country" className="text-gray-700 text-sm font-bold mb-2 mr-2">Sort by:</label>
+          <div className="border rounded py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <select
+              id="country"
+              name="country"
+              className="text-gray-700"
+              disabled
+            >
+              <option>Latest</option>
+              <option>Country 1</option>
+              <option>Country 2</option>
+              <option>Country 3</option>
+            </select>
+          </div>
         </div>
-        <p>105<span>resultsFound</span></p>
+        <p className='mr-5'>105<span className='text-gray-500'> results found</span></p>
       </div>
     </div>
   );

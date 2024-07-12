@@ -13,7 +13,7 @@ const SideNav = () => {
       <div>
         <div className="flex justify-between items-center ml-4 mb-2">
           <p className="font-semibold">All Categories</p>
-          <FaAngleUp />
+          <FaAngleUp className="cursor-pointer" />
         </div>
         <div className="mb-4">
           <label className="flex items-center">
@@ -50,80 +50,79 @@ const SideNav = () => {
         <hr className="my-4" />
         <div className="flex justify-between items-center mb-4">
           <h4 className="font-semibold">Brands</h4>
-          <FaAngleUp />
+          <FaAngleUp className="cursor-pointer" />
         </div>
         <div className="mb-4">
           <label className="flex items-center">
             <input type="checkbox" className="hidden" />
-            <span className="custom-checkbox w-4 h-4 border-2 border-gray-300  flex items-center justify-center mr-2 cursor-pointer"></span>
+            <span className="custom-checkbox w-4 h-4 border-2 border-gray-300 flex items-center justify-center mr-2 cursor-pointer"></span>
             Adobe<br />
           </label>
           <label className="flex items-center">
             <input type="checkbox" className="hidden" />
-            <span className="custom-checkbox w-4 h-4 border-2 border-gray-300  flex items-center justify-center mr-2 cursor-pointer"></span>
-            Adobe<br />
+            <span className="custom-checkbox w-4 h-4 border-2 border-gray-300 flex items-center justify-center mr-2 cursor-pointer"></span>
+            Microsoft<br />
           </label>
           <label className="flex items-center">
             <input type="checkbox" className="hidden" checked readOnly />
-            <span className="custom-checkbox w-4 h-4 border-2 border-yellow-500  flex items-center justify-center mr-2 cursor-pointer bg-yellow-500"></span>
-            Microsoft<br />
+            <span className="custom-checkbox w-4 h-4 border-2 border-yellow-500 flex items-center justify-center mr-2 cursor-pointer bg-yellow-500"></span>
+            Apple<br />
           </label>
         </div>
-        <hr />
-        <div className="flex justify-between items-center">
-          <Price/>
-          <FaAngleUp />
+        <hr className="my-4" />
+        <div className="flex justify-between items-center mb-4">
+          <h4 className="font-semibold">Price</h4>
+          <FaAngleUp className="cursor-pointer" />
         </div>
-      </div>
-      <hr />
-
-      <div className="mt-4">
-        <div className="flex justify-between items-center text-center mb-4">
-          <h3 className="text-xl font-semibold">Rating</h3>
-          <FaAngleUp />
+        <div className="mb-4">
+          <Price />
         </div>
-        <div className="flex flex-col">
+        <hr className="my-4" />
+        <div className="flex justify-between items-center mb-4">
+          <h4 className="font-semibold">Rating</h4>
+          <FaAngleUp className="cursor-pointer" />
+        </div>
+        <div className="mb-4">
           <label className="flex items-center mb-2">
             <input type="checkbox" className="hidden" />
-            <span className="custom-checkbox w-4 h-4 border-2 border-gray-300  flex items-center justify-center mr-2 cursor-pointer"></span>
+            <span className="custom-checkbox w-4 h-4 border-2 border-gray-300 flex items-center justify-center mr-2 cursor-pointer"></span>
             <img src={star5} alt="star5" className="w-20 h-10 cursor-pointer" />
           </label>
           <label className="flex items-center mb-2">
             <input type="checkbox" className="hidden" checked readOnly />
-            <span className="custom-checkbox w-4 h-4 border-2 border-gray-300  flex items-center justify-center mr-2 cursor-pointer bg-yellow-500"></span>
+            <span className="custom-checkbox w-4 h-4 border-2 border-gray-300 flex items-center justify-center mr-2 cursor-pointer bg-yellow-500"></span>
             <img src={star4} alt="star4" className="w-20 h-10 cursor-pointer" />
           </label>
           <label className="flex items-center mb-2">
             <input type="checkbox" className="hidden" />
-            <span className="custom-checkbox w-4 h-4 border-2 border-gray-300  flex items-center justify-center mr-2 cursor-pointer"></span>
+            <span className="custom-checkbox w-4 h-4 border-2 border-gray-300 flex items-center justify-center mr-2 cursor-pointer"></span>
             <img src={star3} alt="star3" className="w-20 h-10 cursor-pointer" />
           </label>
           <label className="flex items-center mb-2">
             <input type="checkbox" className="hidden" />
-            <span className="custom-checkbox w-4 h-4 border-2 border-gray-300  flex items-center justify-center mr-2 cursor-pointer"></span>
+            <span className="custom-checkbox w-4 h-4 border-2 border-gray-300 flex items-center justify-center mr-2 cursor-pointer"></span>
             <img src={star2} alt="star2" className="w-20 h-10 cursor-pointer" />
           </label>
           <label className="flex items-center mb-2">
             <input type="checkbox" className="hidden" />
-            <span className="custom-checkbox w-4 h-4 border-2 border-gray-300  flex items-center justify-center mr-2 cursor-pointer"></span>
+            <span className="custom-checkbox w-4 h-4 border-2 border-gray-300 flex items-center justify-center mr-2 cursor-pointer"></span>
             <img src={star1} alt="star1" className="w-20 h-10 cursor-pointer" />
           </label>
         </div>
-      </div>
-      <hr />
-
-      <div>
-        <div className="flex justify-between items-center mt-4">
-          <h3 className="font-semibold">Popular tags</h3>
-          <FaAngleUp />
+        <hr className="my-4" />
+        <div className="flex justify-between items-center">
+          <h4 className="font-semibold">Popular Tags</h4>
+          <FaAngleUp className="cursor-pointer" />
         </div>
-        <button className='bg-gray-400 py-2 px-4 mb-2 rounded-full'>Adobe</button>
-        <button className='bg-yellow-400 py-2 px-4 mb-2 rounded-full'>Microsoft</button>
-        <button className='bg-gray-400 py-2 px-4 mb-2 rounded-full'>Office</button>
-        <button className='bg-gray-400 py-2 px-4 mb-2 rounded-full'>Bit Defender</button>
-        <button className='bg-gray-400 py-2 px-4 mb-2 rounded-full'>MacSafe</button>
-        <button className='bg-gray-400 py-2 px-4 mb-2 rounded-full'>Antivirus</button>
-        <button className='bg-gray-400 py-2 px-4 mb-2 rounded-full'>VPN</button>
+        <div className="mb-4">
+          <button className="bg-gray-400 py-2 px-4 mb-2 rounded-full">Adobe</button>
+          <button className="bg-yellow-400 py-2 px-4 mb-2 rounded-full">Microsoft</button>
+          <button className="bg-gray-400 py-2 px-4 mb-2 rounded-full">Office</button>
+          <button className="bg-gray-400 py-2 px-4 mb-2 rounded-full">Bit Defender</button>
+          <button className="bg-gray-400 py-2 px-4 mb-2 rounded-full">MacSafe</button>
+          <button className="bg-gray-400 py-2 px-4 mb-2 rounded-full">Antivirus</button>
+          <button className="bg-gray-400 py-2 px-4 mb-2 rounded-full">VPN</button>
+        </div>
       </div>
     </div>
   );
