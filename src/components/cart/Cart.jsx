@@ -50,18 +50,14 @@ const Cart = () => {
             </div>
           </div>
         </div>
-        <div className='gap-1'>
+        <div className="flex items-center space-x-4">
           <IoIosHelpCircleOutline className="text-2xl cursor-pointer" />
-        </div>
-        <div className='gap-1'>
           <MdOutlineAccountCircle className="text-2xl cursor-pointer" />
-        </div>
-        <div className='gap-1'>
           <AiOutlineShoppingCart className="text-2xl cursor-pointer" />
         </div>
       </div>
-      <div>
-        <Link to='/'><p>Tools ></p></Link><span>Cart</span>
+      <div className='flex'>
+        <Link to='/'><p>Timbu ></p></Link><span>Cart</span>
       </div>
 
       <div className="flex mt-4 space-x-4">
@@ -140,8 +136,8 @@ const Cart = () => {
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-xl font-semibold">You may also like</h3>
             <div className="flex items-center space-x-2">
-              <img src={back} alt="Back" className="cursor-pointer" />
-              <img src={forward} alt="Forward" className="cursor-pointer" />
+              <img src={back} height={40} width={40} alt="Back" className="cursor-pointer" />
+              <img src={forward} height={40} width={40} alt="Forward" className="cursor-pointer" />
             </div>
           </div>
 
@@ -197,8 +193,8 @@ const Cart = () => {
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-xl font-semibold">Customers who viewed this item also viewed</h3>
             <div className="flex items-center space-x-1">
-              <img src={back} alt="Back" className="cursor-pointer" />
-              <img src={forward} alt="Forward" className="cursor-pointer" />
+              <img src={back} height={40} width={40} alt="Back" className="cursor-pointer" />
+              <img src={forward} height={40} width={40} alt="Forward" className="cursor-pointer" />
             </div>
           </div>
 

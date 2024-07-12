@@ -3,6 +3,7 @@ import { IoIosSearch, IoIosHelpCircleOutline } from "react-icons/io";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import not from '../../assets/images/not.png';
+import { Link } from 'react-router-dom';
 import Hambuger from './Hambuger';
 
 export default function Navbar() {
@@ -28,14 +29,14 @@ export default function Navbar() {
         <div className="cursor-pointer mr-10">x</div>
       </div>
 
-
       {/* Main content */}
       <div className="flex items-center justify-between bg-gray-100 p-4">
         <Hambuger/>
-        
+
         <div>
           <h3>Timbu</h3>
         </div>
+        
         <div className="relative flex items-center">
           <div className="relative">
             <div className="flex items-center border w-full search-bar px-2 py-1 rounded">
@@ -53,35 +54,33 @@ export default function Navbar() {
             Search
           </div>
         </div>
-        <div>
+        
+        {/* Grouped Icons */}
+        <div className='flex items-center space-x-4'>
           <IoIosHelpCircleOutline className="text-2xl cursor-pointer" />
-        </div>
-        <div>
           <MdOutlineAccountCircle className="text-2xl cursor-pointer" />
-        </div>
-        <div>
           <AiOutlineShoppingCart className="text-2xl cursor-pointer" />
         </div>
       </div>
 
       <div className='flex justify-between'>
-        <p>Tools ><span>Shops</span></p>
+        <p>Tools ><Link to='/products'><span>Shops</span></Link></p>
         <button className='bg-yellow-400 py-2 px-4 ml-10 rounded-full '>Filter</button>
-          <label htmlFor="country" className="block text-gray-700 text-sm font-bold mb-2">Sort by:</label>
-                  <div className="border rounded py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                      <select
-                        id="country"
-                        name="country"
-                        className="  text-gray-700"
-                        disabled
-                      >
-                        <option>Latest</option>
-                        <option>Country 1</option>
-                        <option>Country 2</option>
-                        <option>Country 3</option>
-                      </select>
-                </div>
-                <p>105<span>resultsFound</span></p>
+        <label htmlFor="country" className="block text-gray-700 text-sm font-bold mb-2">Sort by:</label>
+        <div className="border rounded py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+          <select
+            id="country"
+            name="country"
+            className="text-gray-700"
+            disabled
+          >
+            <option>Latest</option>
+            <option>Country 1</option>
+            <option>Country 2</option>
+            <option>Country 3</option>
+          </select>
+        </div>
+        <p>105<span>resultsFound</span></p>
       </div>
     </div>
   );

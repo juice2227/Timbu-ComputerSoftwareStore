@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import img1 from '../../assets/images/office.png';
 import ProductCard from '../products/ProductCard';
 import img2 from '../../assets/images/kas.png';
@@ -51,41 +52,37 @@ export default function ProductsDetails() {
             </div>
           </div>
         </div>
-        <div className='gap-1'>
+        <div className="flex items-center space-x-4">
           <IoIosHelpCircleOutline className="text-2xl cursor-pointer" />
-        </div>
-        <div className='gap-1'>
           <MdOutlineAccountCircle className="text-2xl cursor-pointer" />
-        </div>
-        <div className='gap-1'>
           <AiOutlineShoppingCart className="text-2xl cursor-pointer" />
         </div>
       </div>
       <div className='flex'>
-        <p>Tools><span>shops></span><span>Product details</span></p>
+        <Link to='/'><p>Tools > </p></Link>
+        <Link to='/products'><span className='text-yellow-500'>Shops ></span></Link>
+        <Link><span className='text-yellow-500'>Products details</span></Link>
       </div>
 
       <div>
         <section className="mb-8">
           <div className="flex mb-4">
             <div className="w-1/2">
-              <img src={img1} alt="Microsoft Office 2016 Professional" className="w-full h-auto" />
+              <img src={img1} alt="Microsoft Office 2016 Professional" className="w-full" height={70}/>
             </div>
             <div className="w-1/2 pl-4 flex flex-col justify-between">
               <div>
-                <h2 className="text-2xl font-semibold mb-2">Microsoft Office 2016 Professional</h2>
-                <p className="mb-4">
+                <h2 className="text-2xl font-semibold mb-2 text-center">Microsoft Office 2016 Professional</h2>
+                <p className="mb-4 text-center">
                   Microsoft Office 2019 is the latest version of Microsoft’s most powerful software product, Office 2019.
                   Microsoft Office, or more simply Office, is a family of software built by Microsoft.
                 </p>
-                <p className="text-lg font-semibold mb-2">$299.00</p>
-                <p className="text-lg text-gray-500 mb-4"><strike>$400.00</strike></p>
+                <p className="text-lg font-semibold mb-2 text-center">$299.00</p>
+                <p className="text-lg text-gray-500 mb-4 text-center"><strike>$400.00</strike></p>
                 <hr />
-                
                 <div className="grid grid-cols-2 gap-2 text-sm">
                   <div className="font-semibold">Brand:</div>
                   <div className="text-blue">Microsoft</div>
-                  
                   <div className="font-semibold">SKU:</div>
                   <div>117</div>
                   <div className="font-semibold">CATEGORY:</div>
@@ -95,28 +92,32 @@ export default function ProductsDetails() {
                 </div>
               </div>
               
-              <div className="flex items-center mt-4 space-x-2">
-                <button className="bg-gray-200 p-2 focus:outline-none">
-                  <AiOutlineMinus className="text-yellow-700" />
-                </button>
-                <span className="mx-2">1</span>
-                <button className="bg-gray-200 p-2 focus:outline-none">
-                  <AiOutlinePlus className="text-yellow-700" />
-                </button>
+              <div className="flex items-center mt-2 space-x-2"> {/* Adjusted margin-top here */}
+                
+                <div className="flex items-center justify-center bg-gray-200 rounded py-1 px-3">
+              <button className="focus:outline-none">
+                <AiOutlineMinus className="text-yellow-700" />
+              </button>
+              <span className="mx-2">1</span>
+              <button className="focus:outline-none">
+                <AiOutlinePlus className="text-yellow-700" />
+              </button>
+            </div>
+                
                 <button className="flex items-center border border-gray-400 rounded px-4 py-2">
                   <img src={heart} alt="Heart" height={20} width={20} className="mr-2" /> Wishlist
                 </button>
               </div>
-              <button className='bg-yellow-500 rounded mt-4 w-full py-2'>Add TO Cart</button>
+              <button className='bg-yellow-500 rounded mt-2 w-full py-2'>Add To Cart</button> {/* Adjusted margin-top here */}
             </div>
           </div>
 
-          <div className="mt-8">
-            <nav className="mb-4">
-              <ul className="flex space-x-4">
-                <li className="cursor-pointer border-b-2 border-yellow-500">Descriptions</li>
-                <li className="cursor-pointer">Additional Information</li>
-                <li className="cursor-pointer">Customer Feedback</li>
+          <div className="mt-4"> {/* Adjusted margin-top here */}
+            <nav className="mb-4 items-center">
+              <ul className="flex space-x-4 justify-center">
+                <li className="cursor-pointer border-b-2 text-center border-yellow-500">Descriptions</li>
+                <li className="cursor-pointer text-center">Additional Information</li>
+                <li className="cursor-pointer text-center">Customer Feedback</li>
               </ul>
             </nav>
             <p className="mb-4">
@@ -144,8 +145,8 @@ export default function ProductsDetails() {
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-xl font-semibold">You may also like</h3>
               <div className="flex items-center space-x-2">
-                <img src={back} alt="Back" className="cursor-pointer" />
-                <img src={forward} alt="Forward" className="cursor-pointer" />
+                <img src={back} height={40} width={40} alt="Back" className="cursor-pointer" />
+                <img src={forward} height={40} width={40} alt="Forward" className="cursor-pointer" />
               </div>
             </div>
             <div className="flex">
