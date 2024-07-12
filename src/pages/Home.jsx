@@ -1,21 +1,21 @@
 import Navbar from '../components/navbar/Navbar';
 import Footer from '../components/footer/Footer';
-import Newletter from '../components/newletter/Newletter';
+import Newsletter from '../components/newletter/Newletter';
 import ProductList from '../components/products/ProductList';
 
 export default function Home() {
   return (
-    <div>
-      <div style={{ marginBottom: '20px' }}>
+    <div className="container mx-auto px-4">
+      <div className="mb-5">
         <Navbar />
       </div>
-      <div style={{ marginBottom: '20px' }}>
+      <div className="mb-5">
         <ProductList />
       </div>
-      <div style={{ marginBottom: '20px' }}>
-        <Newletter />
+      <div className="mb-5">
+        <Newsletter />
       </div>
-      <div style={{ marginBottom: '20px' }}>
+      <div className="mb-5">
         <Footer />
       </div>
     </div>
