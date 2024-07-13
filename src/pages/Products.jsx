@@ -1,5 +1,5 @@
 
-import Navbar from '../components/navbar/Navbar'
+import Ptest from '../components/products/Ptest'
 import ProductsDetails from '../components/products/ProductsDetails'
 import Newletter from '../components/newletter/Newletter'
 import Footer from '../components/footer/Footer'
@@ -9,6 +9,7 @@ export default function Products() {
     <div>
         
         <ProductsDetails/>
+        
         <Newletter/>
         <Footer/>
     </div>

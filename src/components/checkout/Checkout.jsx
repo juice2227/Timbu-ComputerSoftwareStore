@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { RiLockPasswordFill } from "react-icons/ri";
 import strp from '../../assets/images/stripe.png';
 import vis from '../../assets/images/visa.png';
 import express from '../../assets/images/exe.png';
 import master from '../../assets/images/mas.png';
 import paypal from '../../assets/images/pal.png';
 import apple from '../../assets/images/apple.png';
-import password from '../../assets/images/pass.png';
 
 export default function Checkout() {
   return (
@@ -32,7 +32,7 @@ export default function Checkout() {
       </div>
 
       <div className="pt-16 flex flex-col md:flex-row md:space-x-8 w-full">
-        {/* Left Side: Contact Information, Shipping Address, Payment Method */}
+    
         <div className="w-full md:w-3/5">
           <div className="mb-8">
             <h1 className="text-3xl font-bold mb-4">Contact Information</h1>
@@ -126,12 +126,12 @@ export default function Checkout() {
                         id="country"
                         name="country"
                         className="w-full bg-gray-100 text-gray-700"
-                        disabled
+                        
                       >
                         <option>Country</option>
-                        <option>Country 1</option>
-                        <option>Country 2</option>
-                        <option>Country 3</option>
+                        <option>kenya</option>
+                        <option>Nigeria</option>
+                        <option>South Africa</option>
                       </select>
                     </div>
                   </div>
@@ -165,7 +165,7 @@ export default function Checkout() {
           <div className="mb-8">
             <h1 className="text-3xl font-bold mb-4">Payment Method</h1>
             <div className="flex items-center mb-4">
-              <img src={password} alt="Password" className="h-6 mr-2" />
+              <RiLockPasswordFill className="h-6 mr-2" />
               <p className="mb-4">All transactions are secured, processed and authorized by external payment providers</p>
             </div>
             <div className="flex flex-col gap-4">
@@ -180,7 +180,7 @@ export default function Checkout() {
               </div>
               <div className="flex items-center justify-between border p-4 bg-gray-100 rounded">
                 <input
-                  type="checkbox" disabled
+                  type="checkbox" 
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
                 />
                 <span>Pay by American Express</span>
@@ -188,7 +188,7 @@ export default function Checkout() {
               </div>
               <div className="flex items-center justify-between border p-4 bg-gray-100 rounded">
                 <input
-                  type="checkbox" disabled
+                  type="checkbox" 
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
                 />
                 <span>Pay by Stripe</span>
@@ -196,7 +196,7 @@ export default function Checkout() {
               </div>
               <div className="flex items-center justify-between bg-gray-100 border p-4 rounded">
                 <input
-                  type="checkbox" disabled
+                  type="checkbox" 
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
                 />
                 <span>Pay by Paypal</span>
@@ -204,7 +204,7 @@ export default function Checkout() {
               </div>
               <div className="flex items-center justify-between bg-gray-100 border p-4 rounded">
                 <input
-                  type="checkbox" disabled
+                  type="checkbox" 
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
                 />
                 <span>Pay by ApplePay</span>
@@ -260,7 +260,7 @@ export default function Checkout() {
               <p>Sub Total <span className="float-right">$598.00</span></p>
               <hr className="my-2" />
               <p>Shipping <span className="float-right">$8.00</span></p>
-              <button className="bg-yellow-500 text-gray-900 p-2 mt-4 rounded outline-none">
+              <button className="bg-yellow-500 text-gray-900 p-2 mt-4 hover:bg-gray-500 rounded outline-none">
                 Pay by Credit or Debit Card
               </button>
             </div>

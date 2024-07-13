@@ -1,22 +1,20 @@
 import React from 'react';
 import heart from '../../assets/images/heart.png';
+import { useCart } from '../context/CartContext';
 
-const ProductCard = ({ image, rating, description, originalPrice, strikedPrice }) => {
+const ProductCard = ({ id, image, rating, description, originalPrice, strikedPrice }) => {
+  const { addToCart, isInCart } = useCart();
+  const inCart = isInCart(id);
+
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden relative w-80 h-96 m-4">
-      
-      <option value=""></option>
-      
       <div className="absolute top-0 left-0 bg-red-500 text-white py-1 px-3">
         <span className="text-xs font-semibold">New</span>
       </div>
 
-      
-      <img src={image} alt={description} className="" />
+      <img src={image} alt={description} className="w-full h-48 object-cover" />
 
-      {/* Content */}
       <div className="p-4">
-        {/* Rating */}
         <div className="flex items-center mb-2">
           <span className="text-yellow-500 mr-1">{rating}</span>
           {[...Array(5)].map((_, index) => (
@@ -26,21 +24,23 @@ const ProductCard = ({ image, rating, description, originalPrice, strikedPrice }
           ))}
         </div>
 
-        {/* Description */}
         <p className="text-gray-800 text-base mb-2">{description}</p>
 
-        {/* Price */}
         <div className="flex items-center mb-2">
           <span className="text-gray-500 text-sm line-through mr-2">{strikedPrice}</span>
           <span className="text-gray-800 text-lg font-semibold">{originalPrice}</span>
         </div>
 
-        {/* Add to Cart button */}
-        <div className='bg-yellow-500 rounded'>
-          <button className="text-white px-4 py-2">Add to Cart</button>
+        <div className="bg-yellow-500 rounded">
+          <button 
+            className="text-white px-4 py-2"
+            onClick={() => addToCart({ id, image, description, originalPrice })}
+            disabled={inCart}
+          >
+            {inCart ? 'Added to Cart' : 'Add to Cart'}
+          </button>
         </div>
 
-        {/* Heart icon */}
         <div className="absolute top-0 right-0 mt-2 mr-2">
           <img src={heart} alt="Heart" height={20} width={20}/>
         </div>

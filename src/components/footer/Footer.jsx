@@ -25,37 +25,37 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links */}
+          
           <div className="text-white">
             <h3 className="text-lg font-semibold mb-2">Links</h3>
             <ul>
-              <li>Home</li>
-              <li>Product</li>
-              <li>Category</li>
-              <li>Account</li>
-              <li>Cart</li>
+              <li className="hover:text-yellow-500">Home</li>
+              <li className="hover:text-yellow-500">Product</li>
+              <li className="hover:text-yellow-500">Category</li>
+              <li className="hover:text-yellow-500">Account</li>
+              <li className="hover:text-yellow-500">Cart</li>
             </ul>
           </div>
 
-          {/* Info */}
+          
           <div className="text-white">
             <h3 className="text-lg font-semibold mb-2">Info</h3>
             <ul>
-              <li>Shopping Policy</li>
-              <li>Return & Refund</li>
-              <li>Support</li>
-              <li>FAQS</li>
+              <li className="hover:text-yellow-500">Shopping Policy</li>
+              <li className="hover:text-yellow-500">Return & Refund</li>
+              <li className="hover:text-yellow-500">Support</li>
+              <li className="hover:text-yellow-500">FAQS</li>
             </ul>
           </div>
 
-          {/* Location */}
+          
           <div className="text-white">
             <h3 className="text-lg font-semibold mb-2">Location</h3>
             <ul>
-              <li>House 17, room 4</li>
-              <li>Highlandway,</li>
-              <li>Lagos, Nigeria</li>
-              <li>234-001-2222</li>
+              <li className="hover:text-yellow-500">House 17, room 4</li>
+              <li className="hover:text-yellow-500">Highlandway,</li>
+              <li className="hover:text-yellow-500">Lagos, Nigeria</li>
+              <li className="hover:text-yellow-500">234-001-2222</li>
             </ul>
           </div>
         </div>

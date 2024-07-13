@@ -1,6 +1,6 @@
 import React from 'react';
 import cong from '../../assets/images/cong.png';
-
+import { Link } from 'react-router-dom';
 export default function Order() {
   return (
     <div className="flex flex-col items-center justify-center">
@@ -33,7 +33,7 @@ export default function Order() {
         </div>
       </div>
 
-      <button className="bg-yellow-500 text-black px-4 py-2 rounded mt-4">Continue Shopping</button>
+      <Link to ="products"><button className="bg-yellow-500 text-black px-4 py-2 rounded mt-4">Continue Shopping</button></Link>
     </div>
   );
 }

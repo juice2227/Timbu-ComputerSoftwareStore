@@ -89,7 +89,7 @@ const SideNav = () => {
             <img src={star5} alt="star5" className="w-20 h-10 cursor-pointer" />
           </label>
           <label className="flex items-center mb-2">
-            <input type="checkbox" className="hidden" checked readOnly />
+            <input type="checkbox" className="hidden" checked  />
             <span className="custom-checkbox w-4 h-4 border-2 border-gray-300 flex items-center justify-center mr-2 cursor-pointer bg-yellow-500"></span>
             <img src={star4} alt="star4" className="w-20 h-10 cursor-pointer" />
           </label>
