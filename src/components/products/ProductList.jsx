@@ -19,7 +19,7 @@ const ProductList = () => {
   return (
     <div className="flex">
         
-      <div className="w-1/4 bg-gray-100 overflow-y-auto">
+      <div className="w-1/4 bg-gray-100 ">
         <SideNav />
       </div>
       <div>
@@ -41,6 +41,8 @@ const ProductList = () => {
           description="Microsoft Office 2016 Professional Plus"
           originalPrice="$299.99"
           strikedPrice="$60.00"
+          addToCart={() => addToCart(product)}
+          isInCart={isInCart(product.id)}
         />
         <ProductCard
           image={img4}
@@ -48,6 +50,8 @@ const ProductList = () => {
           description="2024 5 Years Mc Afee Anti-Virus Latest Version"
           originalPrice="$299.99"
           strikedPrice="$400.00"
+          addToCart={() => addToCart(product)}
+          isInCart={isInCart(product.id)}
         />
         <ProductCard
           image={img2}
@@ -55,6 +59,8 @@ const ProductList = () => {
           description="Kaspersky Standard 1 Device 1 Year 2024"
           originalPrice="$299.99"
           strikedPrice="$400.00"
+          addToCart={() => addToCart(product)}
+          isInCart={isInCart(product.id)}
         />
         <ProductCard
           image={img1}
@@ -62,6 +68,8 @@ const ProductList = () => {
           description="Microsoft Office 2016 Professional Plus"
           originalPrice="$299.99"
           strikedPrice="$60.00"
+          addToCart={() => addToCart(product)}
+          isInCart={isInCart(product.id)}
         />
         <ProductCard
           image={img4}
