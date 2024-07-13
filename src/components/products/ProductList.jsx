@@ -7,7 +7,7 @@ import img2 from '../../assets/images/kas.png';
 import img4 from '../../assets/images/antivirus.png';
 //import { useCart } from '../context/CartContext';
 import { useContext } from 'react';
-import { useCart, CartContext } from '../context/CartContext'; // Ensure correct import
+import { useCart, CartContext } from '../context/CartContext'; 
 const ProductList = () => {
   const { addToCart, isInCart } = useCart();
   const { products } = useContext(CartContext);

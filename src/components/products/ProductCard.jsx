@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import heart from '../../assets/images/heart.png';
 import { useCart } from '../context/CartContext';
+import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 
 const ProductCard = ({ id, image, rating, description, originalPrice, strikedPrice }) => {
+  const [quantity, setQuantity] = useState(1);
   const { addToCart, isInCart } = useCart();
   const inCart = isInCart(id);
+
+  const handleAddToCart = () => {
+    addToCart({ id, image, description, originalPrice, quantity });
+  };
+
+  const handleQuantityChange = (type) => {
+    if (type === 'increase') {
+      setQuantity(prevQuantity => prevQuantity + 1);
+    } else if (type === 'decrease' && quantity > 1) {
+      setQuantity(prevQuantity => prevQuantity - 1);
+    }
+  };
 
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden relative w-80 h-96 m-4">
@@ -31,10 +45,28 @@ const ProductCard = ({ id, image, rating, description, originalPrice, strikedPri
           <span className="text-gray-800 text-lg font-semibold">{originalPrice}</span>
         </div>
 
-        <div className="bg-yellow-500 rounded">
+        <div className="flex items-center mt-2 space-x-2">
+          <div className="flex items-center justify-center bg-gray-200 rounded py-1 px-3 space-x-2">
+            <button 
+              className="focus:outline-none"
+              onClick={() => handleQuantityChange('decrease')}
+            >
+              <AiOutlineMinus className="text-yellow-700" />
+            </button>
+            <span className="mx-2">{quantity}</span>
+            <button 
+              className="focus:outline-none"
+              onClick={() => handleQuantityChange('increase')}
+            >
+              <AiOutlinePlus className="text-yellow-700" />
+            </button>
+          </div>
+        </div>
+
+        <div className="bg-yellow-500 rounded mt-2">
           <button 
-            className="text-white px-4 py-2"
-            onClick={() => addToCart({ id, image, description, originalPrice })}
+            className="text-white px-2 py-2 w-full"
+            onClick={handleAddToCart}
             disabled={inCart}
           >
             {inCart ? 'Added to Cart' : 'Add to Cart'}

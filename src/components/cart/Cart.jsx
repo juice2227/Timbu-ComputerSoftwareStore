@@ -74,7 +74,7 @@ const Cart = () => {
               <li key={product.id} className="flex items-center justify-between p-4 border-b">
                 <div className="flex items-center space-x-4">
                   <img src={product.image} alt={product.description} className="w-16 h-16 object-cover" />
-                  <img src={`https://api.timbu.cloud/images/${product.photos[1].url}`} alt="" />
+                  <img src={`https://api.timbu.cloud/images/${product.photos[0].url}`} alt="" />
                         <p>{product.name}</p>
                   <div>
                     <p className="font-semibold">{product.description}</p>

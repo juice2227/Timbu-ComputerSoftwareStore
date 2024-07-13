@@ -42,7 +42,7 @@ export default function Hambuger() {
           <a href="/" className="py-2 text-gray-800">Home</a>
           <a href="/products" className="py-2 text-gray-800">Products</a>
           <a href="/orders" className="py-2 text-gray-800">Orders</a>
-          <a href="/contact-us" className="py-2 text-gray-800">Contact Us</a>
+          <a href="/" className="py-2 text-gray-800">Contact Us</a>
         </div>
       </div>
 

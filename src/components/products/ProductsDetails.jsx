@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import img1 from '../../assets/images/office.png';
 import ProductCard from '../products/ProductCard';
@@ -12,8 +12,68 @@ import not from '../../assets/images/not.png';
 import heart from '../../assets/images/heart.png';
 import { useCart } from '../context/CartContext';
 
+const fetchProducts = async ({ organization_id, reverse_sort, page, size, Appid, Apikey }) => {
+  const url = new URL('https://timbu-get-all-products.reavdev.workers.dev/');
+  url.searchParams.append('organization_id', organization_id);
+  url.searchParams.append('reverse_sort', reverse_sort);
+  url.searchParams.append('page', page);
+  url.searchParams.append('size', size);
+  url.searchParams.append('Appid', Appid);
+  url.searchParams.append('Apikey', Apikey);
+
+  const response = await fetch(url.toString());
+
+  if (!response.ok) {
+      throw new Error('Network response was not ok');
+  }
+
+  return response.json();
+};
+
+
 export default function ProductDetails() {
   const { isInCart, addToCart } = useCart();
+  const [products, setProducts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isEmpty, setIsEmpty] = useState(false);
+    const [isError, setIsError] = useState(false);
+    const [page, setPage] = useState(1);
+    const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    const params = {
+        organization_id: '8347d91c502a4a5a92f0f85951d2557a',
+        reverse_sort: 'false',
+        page: page,
+        size: 5,
+        Appid: 'EBUZO6O78AP33DC',
+        Apikey: '6c29885f9d4d4469929c4e8c9d463dcf20240710083326482098'
+    };
+
+    const getProducts = async () => {
+        setIsLoading(true);
+        setIsError(false);
+        try {
+            const data = await fetchProducts(params);
+            setProducts(data.items);
+            setIsEmpty(data.total === 0);
+        } catch (error) {
+            setIsError(true);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    getProducts();
+}, [page]);
+
+const handleQuantityChange = (type) => {
+  if (type === 'increase') {
+    setQuantity(prevQuantity => prevQuantity + 1);
+  } else if (type === 'decrease' && quantity > 1) {
+    setQuantity(prevQuantity => prevQuantity - 1);
+  }
+};
 
   const product = {
     id: 1,
@@ -106,15 +166,24 @@ export default function ProductDetails() {
               </div>
 
               <div className="flex items-center mt-2 space-x-2">
-                <div className="flex items-center justify-center bg-gray-200 rounded py-1 px-3">
-                  <button className="focus:outline-none">
-                    <AiOutlineMinus className="text-yellow-700" />
-                  </button>
-                  <span className="mx-2">1</span>
-                  <button className="focus:outline-none">
-                    <AiOutlinePlus className="text-yellow-700" />
-                  </button>
-                </div>
+              <div className="flex items-center mt-2 space-x-2">
+          <div className="flex items-center justify-center bg-gray-200 rounded py-1 px-3 space-x-2">
+            <button 
+              className="focus:outline-none"
+              onClick={() => handleQuantityChange('decrease')}
+            >
+              <AiOutlineMinus className="text-yellow-700" />
+            </button>
+            <span className="mx-2">{quantity}</span>
+            <button 
+              className="focus:outline-none"
+              onClick={() => handleQuantityChange('increase')}
+            >
+              <AiOutlinePlus className="text-yellow-700" />
+            </button>
+          </div>
+        </div>
+
 
                 <button className="flex items-center border border-gray-400 rounded px-4 py-2">
                   <img src={heart} alt="Heart" height={20} width={20} className="mr-2" /> Wishlist
