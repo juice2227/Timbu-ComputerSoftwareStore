@@ -12,61 +12,17 @@ import not from '../../assets/images/not.png';
 import heart from '../../assets/images/heart.png';
 import { useCart } from '../context/CartContext';
 
-const fetchProducts = async ({ organization_id, reverse_sort, page, size, Appid, Apikey }) => {
-  const url = new URL('https://timbu-get-all-products.reavdev.workers.dev/');
-  url.searchParams.append('organization_id', organization_id);
-  url.searchParams.append('reverse_sort', reverse_sort);
-  url.searchParams.append('page', page);
-  url.searchParams.append('size', size);
-  url.searchParams.append('Appid', Appid);
-  url.searchParams.append('Apikey', Apikey);
-
-  const response = await fetch(url.toString());
-
-  if (!response.ok) {
-      throw new Error('Network response was not ok');
-  }
-
-  return response.json();
-};
 
 
 export default function ProductDetails() {
   const { isInCart, addToCart } = useCart();
   const [products, setProducts] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [isEmpty, setIsEmpty] = useState(false);
-    const [isError, setIsError] = useState(false);
-    const [page, setPage] = useState(1);
-    const [quantity, setQuantity] = useState(1);
+    
+    
 
-  useEffect(() => {
-    const params = {
-        organization_id: '8347d91c502a4a5a92f0f85951d2557a',
-        reverse_sort: 'false',
-        page: page,
-        size: 5,
-        Appid: 'EBUZO6O78AP33DC',
-        Apikey: '6c29885f9d4d4469929c4e8c9d463dcf20240710083326482098'
-    };
+    
 
-    const getProducts = async () => {
-        setIsLoading(true);
-        setIsError(false);
-        try {
-            const data = await fetchProducts(params);
-            setProducts(data.items);
-            setIsEmpty(data.total === 0);
-        } catch (error) {
-            setIsError(true);
-        } finally {
-            setIsLoading(false);
-        }
-    };
-
-    getProducts();
-}, [page]);
-
+    
 const handleQuantityChange = (type) => {
   if (type === 'increase') {
     setQuantity(prevQuantity => prevQuantity + 1);
@@ -93,7 +49,7 @@ const handleQuantityChange = (type) => {
       <div className="bg-yellow-500 flex items-center justify-between p-2 text-center">
         <div className="flex items-center">
           <img src={not} alt="notification" className="ml-20" height={10} width={10} />
-          <p className="m-0 ml-20">50% off everything - Limited Time Only!<Link to='/products'><span className='underline'>shop now -></span></Link> </p>
+          <p className="m-0 ml-20">50% off everything - Limited Time Only!<Link to='/products'><span className='underline'>shop now -{'>'}</span></Link> </p>
         </div>
         <div className="cursor-pointer mr-10">x</div>
       </div>
@@ -132,8 +88,8 @@ const handleQuantityChange = (type) => {
         </div>
       </div>
       <div className='flex'>
-        <Link to='/'><p>Tools > </p></Link>
-        <Link to='/products'><span className='text-yellow-500'>Shops ></span></Link>
+        <Link to='/'><p>Tools &gt; </p></Link>
+        <Link to='/products'><span className='text-yellow-500'>Shops &gt;</span></Link>
         <Link><span className='text-yellow-500'>Product details</span></Link>
       </div>
 

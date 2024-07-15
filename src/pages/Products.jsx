@@ -1,5 +1,4 @@
 
-import Ptest from '../components/products/Ptest'
 import ProductsDetails from '../components/products/ProductsDetails'
 import Newletter from '../components/newletter/Newletter'
 import Footer from '../components/footer/Footer'

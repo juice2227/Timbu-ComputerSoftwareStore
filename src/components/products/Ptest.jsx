@@ -83,4 +83,21 @@ const ProductList = () => {
     );
 };
 
-export default ProductList;
+{/*export default ProductList;
+useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch('/https://timbu-get-all-products.reavdev.workers.dev/?organization_id=8347d91c502a4a5a92f0f85951d2557a&reverse_sort=false&page=1&size=10&Appid=EBUZO6O78AP33DC&Apikey=6c29885f9d4d4469929c4e8c9d463dcf20240710083326482098');
+      if (!response.ok) {
+        throw new Error('Failed to fetch products');
+      }
+      const data = await response.json();
+      setProducts(data.items);
+      setApiData(data);
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    }
+  };*/}

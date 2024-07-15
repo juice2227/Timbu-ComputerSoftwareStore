@@ -94,7 +94,7 @@ export default function Navbar() {
         <p className='mr-5'>105<span className='text-gray-500'> results found</span></p>
       </div>
 
-      {/* Display search result */}
+      
       {searchResult && (
         <div className="p-4">
           {typeof searchResult === 'string' ? (

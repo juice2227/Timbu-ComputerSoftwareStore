@@ -1,8 +1,9 @@
 import Navbar from '../components/navbar/Navbar';
 import Footer from '../components/footer/Footer';
 import Newsletter from '../components/newletter/Newletter';
-import ProductList from '../components/products/ProductList';
+import ProductCard from '../components/products/ProductList';
 import SideNav from '../components/sidenav/SideNav';
+
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
           <SideNav />
         </div>
         <div className="w-3/4">
-          <ProductList />
+          <ProductCard />
         </div>
       </div>
       <div className="mb-5">
@@ -24,6 +25,7 @@ export default function Home() {
       <div className="mb-5">
         <Footer />
       </div>
+      
     </div>
   );
 }
