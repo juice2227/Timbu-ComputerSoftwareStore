@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { RiLockPasswordFill } from "react-icons/ri";
 import strp from '../../assets/images/stripe.png';

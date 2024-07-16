@@ -2,7 +2,7 @@ import Navbar from '../components/navbar/Navbar';
 import Footer from '../components/footer/Footer';
 import Newsletter from '../components/newletter/Newletter';
 import ProductCard from '../components/products/ProductList';
-import SideNav from '../components/sidenav/SideNav';
+
 
 
 export default function Home() {
