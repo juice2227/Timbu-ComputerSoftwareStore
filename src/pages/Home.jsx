@@ -12,9 +12,7 @@ export default function Home() {
         <Navbar />
       </div>
       <div className="flex mb-5">
-        <div className="w-1/4">
-          <SideNav />
-        </div>
+        
         <div className="w-3/4">
           <ProductCard />
         </div>

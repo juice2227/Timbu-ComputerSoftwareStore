@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { Link } from 'react-router-dom';
 import img1 from '../../assets/images/office.png';
 import ProductCard from '../products/ProductCard';
@@ -17,7 +17,7 @@ import { useCart } from '../context/CartContext';
 export default function ProductDetails() {
   const { isInCart, addToCart } = useCart();
   const [products, setProducts] = useState([]);
-    
+    const [quantity, setQuantity] = useState()  //Added the quantity and set quantity
     
 
     
@@ -46,6 +46,7 @@ const handleQuantityChange = (type) => {
 
   return (
     <div className="w-full">
+      {/* PROMO BANNER */}
       <div className="bg-yellow-500 flex items-center justify-between p-2 text-center">
         <div className="flex items-center">
           <img src={not} alt="notification" className="ml-20" height={10} width={10} />
@@ -189,40 +190,9 @@ const handleQuantityChange = (type) => {
             <div className="flex">
               <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
                 <ProductCard
-                  image={img1}
-                  rating={4.5}
-                  description="Microsoft Office 2016 Professional Plus"
-                  originalPrice="$299.99"
-                  strikedPrice="$60.00"
+                 
                 />
-                <ProductCard
-                  image={img1}
-                  rating={4.5}
-                  description="2024 5 Years Mc Afee Anti-Virus Latest Version"
-                  originalPrice="$299.99"
-                  strikedPrice="$400.00"
-                />
-                <ProductCard
-                  image={img1}
-                  rating={4.5}
-                  description="Kaspersky Standard 1 Device 1 Year 2024"
-                  originalPrice="$299.99"
-                  strikedPrice="$400.00"
-                />
-                <ProductCard
-                  image={img1}
-                  rating={4.5}
-                  description="Microsoft Office 2016 Professional Plus"
-                  originalPrice="$299.99"
-                  strikedPrice="$60.00"
-                />
-                <ProductCard
-                  image={img1}
-                  rating={4.5}
-                  description="2024 5 Years Mc Afee Anti-Virus Latest Version"
-                  originalPrice="$299.99"
-                  strikedPrice="$400.00"
-                />
+                
               </div>
             </div>
           </div>
